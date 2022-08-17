@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
+import Carousel from "./Sheared/Carousel";
 
 const Home = () => {
-    return (
-        <div>
-            <h1>This si sHOme</h1>
-        </div>
-    );
+  return (
+    <div>
+      <Carousel></Carousel>
+    </div>
+  );
 };
 
 export default Home;

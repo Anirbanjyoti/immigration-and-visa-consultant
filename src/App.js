@@ -4,6 +4,8 @@ import Navbar from './Page/Sheared/Navbar';
 import { Routes, Route } from "react-router-dom";
 import Home from './Page/Home';
 import About from './Page/About';
+import Footer from './Page/Sheared/Footer';
+import Services from './Page/Services';
 
 function App() {
   return (
@@ -11,8 +13,10 @@ function App() {
     <Navbar></Navbar>
     <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="service" element={<Services />} />
         <Route path="about" element={<About />} />
-      </Routes>
+    </Routes>
+    <Footer></Footer>
     </div>
   );
 }
