@@ -3,8 +3,9 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import axios from "axios";
-import auth from "../../firebase.init";
+import axios from "axios";
+import auth from "../firebase.init";
+import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
   const [user] = useAuthState(auth);
@@ -18,33 +19,26 @@ const Checkout = () => {
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, [serviceId]);
-//   console.log(service?.title);
-  
-//   useEffect(() => {
-//     const url = `http://localhost:3000/checkout/${serviceId}`;
-//     fetch(url)
-//       .then((res) => res.json())
-//       .then((data) => setTools(data));
-//   }, [serviceId]);
-
+const navigate = useNavigate();
   const handlePlaceOrder = (e) => {
     e.preventDefault();
-    // const order = {
-    //   email: user.email,
-    //   //   shipping: shipping.name,
-    //   serviceId: serviceId,
-    //   address: e.target.address.value,
-    //   phone: e.target.phone.value,
-    // };
+    const order = {
+      email: user.email,
+      Name: user.displayName,
+      serviceId: serviceId,
+      visa: services.title,
+      address: e.target.address.value,
+      phone: e.target.phone.value,
+    };
 
-    // axios.post("http://localhost:5000/services", order).then((res) => {
-    //   const { data } = res;
-    //   if (data.insertedId) {
-    //     toast(" Your Consultation is Booked!");
-    //   }
-    //   e.target.reset();
-    // });
-    // Redirection page.
+    axios.post("http://localhost:5000/candidate", order).then((res) => {
+      const { data } = res;
+      if (data.insertedId) {
+        toast(" Your Consultation is Booked!");
+      }
+      e.target.reset();
+    });
+    navigate('/confirm')
   };
 
   return (
