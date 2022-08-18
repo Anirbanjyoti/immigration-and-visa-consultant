@@ -11,7 +11,7 @@ const Navbar = () => {
   
   const logout = () => {
     signOut(auth);
-    // localStorage.removeItem('accessToken');
+    localStorage.removeItem('accessToken');
   };
   return (
     <div>
@@ -100,7 +100,8 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end">  
+        <span className="mr-2">{user && user?.displayName}</span>
           {user ? (
             <button className="btn bg-secondary" onClick={logout}>
               Log Out
