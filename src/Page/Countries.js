@@ -5,7 +5,7 @@ import bg from "../Assets/Images/pattern.png";
 const Countries = () => {
   const [countries, setCountries] = useState([]);
   useEffect(() => {
-    fetch("CoutriesImage.json")
+    fetch("http://localhost:5000/countries")
       .then((res) => res.json())
       .then((data) => setCountries(data));
   }, []);

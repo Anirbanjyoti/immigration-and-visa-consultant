@@ -7,8 +7,8 @@ import { useForm } from "react-hook-form";
 import auth from "../../firebase.init";
 import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "./SocialLogin";
-// import useToken from "../../hooks/useToken";
 import Loading from "../Sheared/Loading";
+import useToken from "../../Hooks/useToken";
 
 const SignUp = () => {
   const {
@@ -22,7 +22,7 @@ const SignUp = () => {
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
   // calling custom hooks for Saving Registered user information in the database
-  // const [token] = useToken(user);
+  const [token] = useToken(user);
 
   // Onsubmit
   const onSubmit = async (data) => {
@@ -33,7 +33,7 @@ const SignUp = () => {
   };
   const navigate = useNavigate();
   let signInError;
-  if (user) {
+  if (token) {
     navigate("/service");
   }
   if (loading || updating) {

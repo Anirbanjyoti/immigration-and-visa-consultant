@@ -10,6 +10,7 @@ import Login from './Page/Login/Login';
 import SignUp from './Page/Login/SignUp';
 import RequireAuth from './Page/Login/RequireAuth';
 import { ToastContainer } from 'react-toastify';
+import Checkout from './Page/Sheared/Checkout';
 
 function App() {
   return (
@@ -20,6 +21,11 @@ function App() {
         <Route path="service" element={
         <RequireAuth>
         <Services />
+        </RequireAuth>
+        } />
+        <Route path="checkout" element={
+        <RequireAuth>
+        <Checkout />
         </RequireAuth>
         } />
         <Route path="about" element={<About />} />
