@@ -1,4 +1,5 @@
 import React from "react";
+import {Link } from "react-router-dom";
 
 const Country = ({ country }) => {
   return (
@@ -7,10 +8,10 @@ const Country = ({ country }) => {
         <img src={country.img} alt="country" className="w-full" />
       </div>
       <div class="flex justify-center">
-        <div class="mt-[-100px]">
-          <button class="btn btn-outline bg-secondary  text-white">
+        <div class="mt-[-60px]">
+          <a href={Link} class="text-2xl text-white">
             {country.CountryName}
-          </button>
+          </a>
         </div>
       </div>
     </div>
