@@ -8,6 +8,8 @@ import Footer from './Page/Sheared/Footer';
 import Services from './Page/Services';
 import Login from './Page/Login/Login';
 import SignUp from './Page/Login/SignUp';
+import RequireAuth from './Page/Login/RequireAuth';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -15,12 +17,17 @@ function App() {
     <Navbar></Navbar>
     <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="service" element={<Services />} />
+        <Route path="service" element={
+        <RequireAuth>
+        <Services />
+        </RequireAuth>
+        } />
         <Route path="about" element={<About />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
     </Routes>
     <Footer></Footer>
+    <ToastContainer />
     </div>
   );
 }
