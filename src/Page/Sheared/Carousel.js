@@ -44,7 +44,7 @@ const Carousel = () => {
           <h1 className="text-5xl text-white font-bold">
             Modern Immigration <br /> Firm With Savings{" "}
           </h1>
-          <button class="btn border-2 border-white btn-accent bg-secondary text-white mt-2">Discover Solution</button>
+          <button className="btn border-2 border-white btn-accent bg-secondary text-white mt-2">Discover Solution</button>
         </div>
       </div>
     </div>

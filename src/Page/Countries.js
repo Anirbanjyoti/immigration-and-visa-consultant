@@ -18,7 +18,7 @@ const Countries = () => {
         <div className="text-center text-white pt-40 pb-60 bg-auto bg-no-repeat bg-center">
           <h3>COUNTRIES WE OFFER SUPPORT</h3>
           <h1 className="text-5xl font-bold pb-10">Apply For Quick Visa</h1>
-          <div class="divider bg-secondary divide-dashed w-60 h-px mx-auto"></div>
+          <div className="divider bg-secondary divide-dashed w-60 h-px mx-auto"></div>
         </div>
 
         <div className="md:flex justify-evenly  md:mx-60 mt-[-200px]">

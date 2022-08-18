@@ -1,20 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Service = ({ service }) => {
-  const { title, short, img } = service;
+  const { _id, title, short, img } = service;
+
+  const navigate= useNavigate();
+  const handleCheckout=id=>{
+    navigate(`/checkout/${_id}`)
+  }
   return (
-    <div class="card bg-base-100 shadow-xl">
-      <figure class="px-10 pt-10">
-        <img src={img} alt="service" class="rounded-xl" />
+    <div className="card bg-base-100 shadow-xl">
+      <figure className="px-10 pt-10">
+        <img src={img} alt="service" className="rounded-xl" />
       </figure>
-      <div class="card-body items-center text-center">
-        <h2 class="card-title">{title}</h2>
+      <div className="card-body items-center text-center">
+        <h2 className="card-title">{title}</h2>
         <p>{short}</p>
-        <div class="card-actions">
-          <Link to='/checkout' class="btn bg-secondary border-2 border-white">
-            BooK
-          </Link>
+        <div className="card-actions">
+          <a onClick={()=>handleCheckout(_id)}  className="btn bg-secondary border-2 border-white">
+            BooK Consultation
+          </a>
         </div>
       </div>
     </div>
