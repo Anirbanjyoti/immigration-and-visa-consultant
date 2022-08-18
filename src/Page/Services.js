@@ -19,7 +19,7 @@ const Services = () => {
           aute irure dolor in reprehenderit cepteur sint ocaecat cupidatate
         </p>
       </div>
-      <div className="grid grid-cols-3 gap-4 p-24">
+      <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-4 p-24">
         {services.map((service) => (
           <Service key={service.id} service={service}></Service>
         ))}

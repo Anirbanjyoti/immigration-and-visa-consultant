@@ -1,0 +1,22 @@
+[
+    {
+        "id":1,
+        "CountryName":"Europe",
+        "img":"https://i.ibb.co/g4Ghtjn/offer-1.jpg"
+    },
+    {
+        "id":2,
+        "CountryName":"Europe",
+        "img":"https://i.ibb.co/g4Ghtjn/offer-1.jpg"
+    },
+    {
+        "id":3,
+        "CountryName":"Europe",
+        "img":"https://i.ibb.co/g4Ghtjn/offer-1.jpg"
+    },
+    {
+        "id":4,
+        "CountryName":"Europe",
+        "img":"https://i.ibb.co/g4Ghtjn/offer-1.jpg"
+    }
+]
