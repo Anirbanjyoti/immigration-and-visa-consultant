@@ -12,6 +12,8 @@ import RequireAuth from "./Page/Login/RequireAuth";
 import { ToastContainer } from "react-toastify";
 import Checkout from "./Page/Checkout";
 import Confirm from "./Page/Confirm";
+import Blog from "./Page/Blog";
+import NotFound from "./Page/NotFound";
 
 function App() {
   return (
@@ -38,8 +40,10 @@ function App() {
         ></Route>
         <Route path="about" element={<About />} />
         <Route path="confirm" element={<Confirm />} />
+        <Route path="blog" element={<Blog />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer></Footer>
       <ToastContainer />
