@@ -1,9 +1,15 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import slide1 from "../../Assets/Images/banner-1.jpg";
 import slide2 from "../../Assets/Images/banner-2.jpg";
 import slide3 from "../../Assets/Images/banner-3.jpg";
 
 const Carousel = () => {
+  const navigate = useNavigate();
+  const handleDiscover=e=>{
+    e.preventDefault();
+    navigate('/service')
+  }
   return (
     <div>
       <div className="carousel w-full">
@@ -44,7 +50,7 @@ const Carousel = () => {
           <h1 className="text-5xl text-white font-bold">
             Modern Immigration <br /> Firm With Savings{" "}
           </h1>
-          <button className="btn border-2 border-white btn-accent bg-secondary text-white mt-2">Discover Solution</button>
+          <a href={Link} onClick={handleDiscover} className="btn border-2 border-white btn-accent bg-secondary text-white mt-2">Discover Solution</a>
         </div>
       </div>
     </div>
