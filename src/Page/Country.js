@@ -1,7 +1,12 @@
 import React from "react";
-import {Link } from "react-router-dom";
+import {Link, useNavigate } from "react-router-dom";
 
 const Country = ({ country }) => {
+  const navigate = useNavigate();
+  const handleQuickVisa=e=>{
+    e.preventDefault();
+    navigate('/service')
+  }
   return (
     <div>
       <div className="m-5">
@@ -9,7 +14,7 @@ const Country = ({ country }) => {
       </div>
       <div className="flex justify-center">
         <div className="mt-[-60px]">
-          <a href={Link} className="text-2xl text-white">
+          <a href={Link} onClick={handleQuickVisa} className="text-2xl text-white">
             {country.CountryName}
           </a>
         </div>
